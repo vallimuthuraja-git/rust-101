@@ -8,8 +8,8 @@
 ![Memory Safe](https://img.shields.io/badge/Memory_Safe-No_GC-green)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-**🌐 Live Demo (GitHub Pages):** https://YOUR-USERNAME.github.io/rust-101/
-**💻 Source Code:** https://github.com/YOUR-USERNAME/rust-101
+**🌐 Live Demo (GitHub Pages):** https://vallimuthuraja-git.github.io/rust-101/
+**💻 Source Code:** https://github.com/vallimuthuraja-git/rust-101
 **👋 Hello Demo:** [hello.html](./hello.html) — also live at `/hello.html` on Pages
 
 ---
@@ -50,7 +50,7 @@ My **Rust Journey** starts here because I'm tired of choosing between:
 
 > **If you read nothing else:** ~70% of all serious security bugs at Microsoft, Google, and Apple for 20 years straight were **memory safety bugs** — use-after-free, buffer overflows, data races. Rust eliminates that entire class *at compile time* with no runtime cost. That one fact explains the whole industry stampede below. 👇
 
-**Try it live:** open the [Hello World page](https://YOUR-USERNAME.github.io/rust-101/hello.html) — it's the actual output of this repo's Rust binary, published via GitHub Pages.
+**Try it live:** open the [Hello World page](https://vallimuthuraja-git.github.io/rust-101/hello.html) — it's the actual output of this repo's Rust binary, published via GitHub Pages.
 
 ---
 
@@ -338,7 +338,7 @@ Trap 1: String vs &str (own vs borrow). Trap 2: borrow checker yelling? .clone()
 ## Run this project
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/rust-101.git
+git clone https://github.com/vallimuthuraja-git/rust-101.git
 cd rust-101
 cargo run
 ```
@@ -351,7 +351,7 @@ View site locally: `python3 -m http.server 8000`, open http://localhost:8000/ind
 
 Week 1: Rust Book ch 1-6 + rustlings + args. Week 2: ownership gym. Week 3: tiny CLI with clap. Week 4: rayon + tokio/axum. Month 2: wasm-pack. Month 3: contribute to bevy/nushell.
 
-Links: The Rust Book, Rust by Example, Rustlings, crates.io, live site.
+Links: The Rust Book, Rust by Example, Rustlings, crates.io, live site at https://vallimuthuraja-git.github.io/rust-101/.
 
 ---
 
