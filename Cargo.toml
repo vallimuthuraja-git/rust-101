@@ -1,0 +1,8 @@
+[package]
+name = "rust-101"
+version = "0.1.0"
+edition = "2021"
+description = "My Rust journey begins — Hello World + Rust 101 guide"
+license = "MIT"
+
+[dependencies]

@@ -1,0 +1,19 @@
+# Build output
+/target/
+# Compiled binary from rustc (keep hello.rs source, ignore binary)
+/hello
+hello.exe
+# Cargo lock for libs (keep for binaries, standard practice)
+# Cargo.lock
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+# Rust backup files
+*.bk
+# GitHub Pages local preview
+_site/
+.jekyll-cache/

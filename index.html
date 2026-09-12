@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Rust Journey Begins - RUST 101</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--orange:#f74c00;--green:#3fb950}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header.hero{text-align:center;padding:4rem 1rem 3rem;background:radial-gradient(ellipse at top,#f74c0022,transparent 60%)}
+.hero h1{font-size:2.6rem;margin:.2rem 0}
+.hero p.sub{color:var(--muted);max-width:720px;margin:0 auto 1.5rem;font-size:1.1rem}
+.btn{display:inline-block;margin:.3rem;padding:.7rem 1.4rem;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid var(--border);color:var(--text);background:var(--card)}
+.btn.primary{background:var(--orange);border-color:var(--orange);color:#fff}
+nav.toc{max-width:1000px;margin:0 auto;padding:1rem;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+nav.toc a{color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:.3rem .8rem;border-radius:999px;font-size:.9rem}
+main{max-width:1000px;margin:0 auto;padding:0 1rem 4rem}
+section.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;margin:1.5rem 0}
+section.card h2{margin-top:0;color:var(--orange)}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+th,td{border:1px solid var(--border);padding:.6rem .7rem;text-align:left}
+th{background:#21262d}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}.hero h1{font-size:1.8rem}}
+.chart-box{background:#0d1117;border:1px solid var(--border);border-radius:12px;padding:1rem;margin:1rem 0}
+.chart-box h3{margin:.2rem 0 1rem;text-align:center}
+pre.code{background:#0d1117;border:1px solid var(--border);border-radius:10px;padding:1rem;overflow:auto}
+code.in{background:#21262d;padding:.1rem .4rem;border-radius:6px}
+.hello-out{background:#000;color:#7CFC00;font-size:1.6rem;font-weight:800;text-align:center;border-radius:10px;padding:1.2rem;border:1px solid var(--green)}
+footer{text-align:center;color:var(--muted);padding:2rem;font-size:.9rem}
+footer a{color:var(--orange)}
+.note{font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="hero">
+<div style="font-size:3.5rem">🦀</div>
+<h1>My Rust Journey Begins — RUST 101</h1>
+<p class="sub">C makes it easy to shoot yourself in the foot. C++ blows away your whole leg.<br><b>Rust won't even let the gun compile.</b></p>
+<div><img src="https://img.shields.io/badge/Rust-1.98.1-orange?logo=rust&logoColor=white" alt="rust">
+<img src="https://img.shields.io/badge/Most_Loved-9_years-ff69b4" alt="loved">
+<img src="https://img.shields.io/badge/Memory_Safe-No_GC-green" alt="safe"></div>
+<div style="margin-top:1.2rem">
+<a class="btn primary" href="hello.html">Live Hello World</a>
+<a class="btn" id="repoBtn" href="https://github.com/YOUR-USERNAME/rust-101">GitHub Repo</a>
+<a class="btn" href="#graphs">Speed Graphs</a>
+</div>
+</header>
+<nav class="toc">
+<a href="#hello">Hello</a><a href="#history">History</a><a href="#why">Why Rust</a><a href="#market">Market</a><a href="#elon">Elon and Giants</a><a href="#can">Can/Cannot</a><a href="#graphs">Graphs</a><a href="#crash">Rust 101</a><a href="#run">Run it</a>
+</nav>
+<main>
+<section class="card" id="hello">
+<h2>00 — Hello, My Journey</h2>
+<pre class="code">fn main() {
+    println!("Hello, World!");
+}</pre>
+<p>Entire first program (hello.rs / src/main.rs). Three lines. Zero GC. C++ speed.</p>
+<div class="hello-out">Hello, World!</div>
+<p style="text-align:center"><a class="btn primary" href="hello.html">Open hello.html</a></p>
+<p>~70% of serious bugs at Microsoft/Google/Apple for 20 years were memory safety bugs. Rust kills that class at compile time.</p>
+</section>
+<section class="card" id="history">
+<h2>01 — History of Rust</h2>
+<table><tr><th>Year</th><th>What happened</th></tr>
+<tr><td><b>2006</b></td><td>Graydon Hoare starts Rust fixing Firefox crashes.</td></tr>
+<tr><td><b>2009</b></td><td>Mozilla sponsors Rust. OCaml to self-hosted.</td></tr>
+<tr><td><b>2015</b></td><td>Rust 1.0. Stability promise. Cargo takes off.</td></tr>
+<tr><td><b>2015-19</b></td><td>Servo proves parallel rendering. Most Loved streak begins.</td></tr>
+<tr><td><b>2021</b></td><td>AWS/Google/Microsoft/Huawei/Mozilla found Rust Foundation.</td></tr>
+<tr><td><b>2022</b></td><td>Rust enters Linux kernel 6.1, Windows kernel, Android.</td></tr>
+<tr><td><b>2024</b></td><td>White House urges memory-safe. EU CRA. Ferrocene for cars.</td></tr>
+<tr><td><b>2026</b></td><td>You are here. rustc 1.98.1.</td></tr>
+</table>
+</section>
+<section class="card" id="why">
+<h2>02 — Why do we need Rust?</h2>
+<div class="grid2">
+<div><h3>Memory bugs = money</h3><p>~70% of CVEs. Rust turns them into compile errors.</p></div>
+<div><h3>Fearless concurrency</h3><p>C++ threads = roulette. Rust threads = checked. Discord killed GC pauses Go to Rust.</p></div>
+<div><h3>C-speed, no footguns</h3><p>Python 20-100x slower. Rust = C speed, safe, no GC.</p></div>
+<div><h3>Cargo</h3><p>build/test/fmt/clippy/doc in one tool. Errors that teach.</p></div>
+</div>
+</section>
+<section class="card" id="elon">
+<h2>04 — Why Elon companies + giants use Rust</h2>
+<p>Rockets can't segfault. Cars can't blue-screen at 70mph. Satellites have nobody to reboot them.</p>
+<table><tr><th>Company</th><th>Where</th><th>Why Rust</th></tr>
+<tr><td><b>SpaceX</b></td><td>Starlink networking, ground systems</td><td>No GC pauses; tokio handles millions of conns</td></tr>
+<tr><td><b>Tesla</b></td><td>Firmware, Autopilot infra</td><td>Ferrocene = ISO 26262 Rust for cars</td></tr>
+<tr><td><b>X / xAI</b></td><td>Backend hot paths, inference</td><td>2-10x latency cut, no GIL</td></tr>
+<tr><td><b>Microsoft</b></td><td>Windows kernel, Azure</td><td>Eradicates CVE classes</td></tr>
+<tr><td><b>Google</b></td><td>Android 1.5M+ lines, Fuchsia</td><td>Zero vulns in new Rust code</td></tr>
+<tr><td><b>AWS</b></td><td>Firecracker, Bottlerocket</td><td>Lambda runs on Rust microVMs</td></tr>
+<tr><td><b>Cloudflare/Discord</b></td><td>Pingora 100M rps</td><td>30% less CPU, p99 down 10x</td></tr>
+</table>
+</section>
+<section class="card" id="can">
+<h2>05/06 — What you can (and cannot) do / build</h2>
+<div class="grid2">
+<div><h3>CAN do</h3><ul><li>Kernels, drivers, firmware</li><li>Fearless threads (tokio/rayon)</li><li>WASM in browser</li><li>C/C++ interop</li><li>Crypto, DBs, CLIs, cloud APIs</li></ul></div>
+<div><h3>Honest limits</h3><ul><li>Borrow checker hurts 2-4 weeks</li><li>Slow compiles</li><li>No Java-inheritance (traits!)</li><li>AAA games C++; mobile UI Swift/Kotlin; notebooks Python</li></ul></div>
+</div>
+<p><b>Rule:</b> bug could kill / cost millions / page you at 3AM = Rust. Hackathon UI in 3h = Python/JS, rewrite hot part later.</p>
+<p>CAN build: Linux drivers, Servo, Pingora, Firecracker, SurrealDB, Polars, Solana, ripgrep, Ruff, Zed, Tauri, tokenizers, axum APIs, Bevy.</p>
+</section>
+<section class="card" id="graphs">
+<h2>07 — Language comparison graphs</h2>
+<p class="note">Illustrative, directionally correct (Benchmarks Game, energy studies, CVE reports). Hover bars!</p>
+<div class="chart-box"><h3>Speed (higher = faster, C = 100)</h3><canvas id="cSpeed"></canvas></div>
+<div class="grid2">
+<div class="chart-box"><h3>RAM MB (lower = leaner)</h3><canvas id="cRam"></canvas></div>
+<div class="chart-box"><h3>Safety /10 (higher = safer)</h3><canvas id="cSafe"></canvas></div>
+</div>
+<div class="grid2">
+<div class="chart-box"><h3>CVEs per 100k LOC (lower = better)</h3><canvas id="cVuln"></canvas></div>
+<div class="chart-box"><h3>Concurrency /10</h3><canvas id="cConc"></canvas></div>
+</div>
+<div class="chart-box"><h3>Overall — Rust vs C++ vs Go vs Python</h3><canvas id="cRadar"></canvas></div>
+<p class="note">Rust maxes safety/speed/concurrency/efficiency, trades Day-1 ease + hiring pool. Python inverse. Go/Java middle. C/C++ match speed, collapse on safety.</p>
+</section>
+<section class="card" id="crash">
+<h2>08 — RUST 101 crash course</h2>
+<pre class="code">fn main() {
+    println!("Hello, World!"); // ! = macro
+}
+// let x = 5;  immutable by default
+// let mut y = 6;
+// let s2 = s1;  moved — ownership!
+// fn len(s: &String)  & borrows
+// File::open("x")?  errors as values
+// cargo run / build / test / fmt / clippy</pre>
+<p>Trap 1: String vs &str. Trap 2: checker yelling? .clone() first, optimize later.</p>
+</section>
+<section class="card" id="run">
+<h2>09 — Run + next steps</h2>
+<pre class="code">git clone https://github.com/YOUR-USERNAME/rust-101.git
+cd rust-101
+cargo run
+# Hello, World!</pre>
+<p>Week 1: Book ch1-6 + rustlings. Week 2: ownership gym. Week 3: clap CLI. Week 4: rayon + axum. Month 2: wasm-pack. Month 3: contribute.</p>
+<p><a class="btn primary" href="hello.html">hello.html</a> <a class="btn" id="repoBtn2" href="https://github.com/YOUR-USERNAME/rust-101">Star the repo</a></p>
+</section>
+</main>
+<footer>
+MIT — built with Rust + coffee as Day 1 of my Rust journey. Share with one C++ friend who says "Rust is hype."<br>
+<a id="repoFoot" href="https://github.com/YOUR-USERNAME/rust-101">github.com/YOUR-USERNAME/rust-101</a>
+</footer>
+<script>
+Chart.defaults.color = '#e6edf3';
+Chart.defaults.borderColor = '#30363d';
+const langs = ['C','Rust','C++','Go','Java','C#','JS','Python'];
+function bar(id, data, label, color){
+  new Chart(document.getElementById(id), { type:'bar',
+    data:{ labels:langs, datasets:[{ label, data, backgroundColor:color, borderRadius:8 }] },
+    options:{ responsive:true, plugins:{legend:{display:false}}, scales:{ y:{beginAtZero:true} } } });
+}
+bar('cSpeed',[100,99,99,75,65,62,50,8],'Speed','#f74c00');
+bar('cRam',[4,5,6,25,180,150,70,45],'MB','#3fb950');
+bar('cSafe',[2,10,4,8.5,8.5,8.5,8,8.5],'Safety','#58a6ff');
+bar('cVuln',[13,0.5,10,3,3,3,3,3],'CVEs','#f85149');
+bar('cConc',[3,10,3,8,7,7,6,4],'Concurrency','#d2a8ff');
+new Chart(document.getElementById('cRadar'), { type:'radar',
+  data:{ labels:['Speed','Safety','Concurrency','Efficiency','Ergonomics','Hiring pool'],
+    datasets:[
+      { label:'Rust', data:[10,10,10,10,6,3], borderColor:'#f74c00', backgroundColor:'#f74c0033' },
+      { label:'C++', data:[10,4,3,10,5,6], borderColor:'#58a6ff', backgroundColor:'#58a6ff33' },
+      { label:'Go', data:[7.5,8.5,8,7,8,8], borderColor:'#3fb950', backgroundColor:'#3fb95033' },
+      { label:'Python', data:[1,8.5,4,2,10,10], borderColor:'#e3b341', backgroundColor:'#e3b34133' }
+    ]},
+  options:{ responsive:true, scales:{ r:{ min:0, max:10, ticks:{stepSize:2} } } } });
+</script>
+</body>
+</html>
+<section class="card" id="market">
+<h2>03 — Current market 2024-2026</h2>
+<ul>
+<li>Most Loved 9 years (Stack Overflow).</li>
+<li>Top-10 GitHub by PRs. 150k+ crates, 50B+ downloads.</li>
+<li>Top-3 pay (US ~$170-200k). Demand 3-5x supply.</li>
+<li>White House + NSA + EU push memory-safe. Rust = cheapest compliance.</li>
+<li>Linux, Windows, Android ship Rust in kernel.</li>
+<li>Ruff, uv, Pingora, Zed, Polars, Deno — all Rust.</li>
+</ul>
+</section>
